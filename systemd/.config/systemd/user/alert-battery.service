@@ -3,7 +3,7 @@ Description=Alert in case of low remaining battery
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/alert-battery
+ExecStart=/home/deniss/.scripts/alert-battery.sh
 
 [Install]
 WantedBy=graphical.target
