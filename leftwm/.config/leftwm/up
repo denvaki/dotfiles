@@ -1,0 +1,5 @@
+#!/bin/bash
+
+xinput set-prop "SYNA8013:00 06CB:CE69 Touchpad" "libinput Tapping Enabled" 1
+xinput set-prop "SYNA8013:00 06CB:CE69 Touchpad" "libinput Natural Scrollng Enabled" 1
+setxkbmap  -model pc105 -layout 'ee,ru' -variant 'us, ' -option 'grp:win_space_toggle'

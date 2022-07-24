@@ -1,0 +1,6 @@
+setLayout() {
+	sleep 5;
+	setxkbmap  -model pc105 -layout 'ee,ru' -variant 'us, ' -option 'grp:win_space_toggle'  -option lv3:ralt_switch_multikey
+}
+
+setLayout &
