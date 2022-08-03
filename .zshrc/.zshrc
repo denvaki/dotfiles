@@ -71,7 +71,7 @@ SCRIPTS_DIR="/home/deniss/.scripts"
 source $SCRIPTS_DIR/aliases.sh
 source $SCRIPTS_DIR/functions.sh
 source $SCRIPTS_DIR/variables.sh
-. "$HOME/.cargo/env"
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 eval "$(starship init zsh)"
 
 
@@ -80,3 +80,7 @@ source ~/.config/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/.zsh_plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 autoload -U compinit; compinit
+
+# keybindings for history autocomplete
+[[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" history-beginning-search-backward
+[[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" history-beginning-search-forward
