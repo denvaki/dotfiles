@@ -5,5 +5,6 @@ output=$(zenity --list --title="Choose monitor to connect" --column='Port' $(xra
 [[ -z "${output}" ]] && exit 0;
 position=$(zenity --list --title="Choose position relativly to primary display" --column='Position' left-of right-of above below)
 [[ -z "${position}" ]] && exit 0;
+xrandr --auto
 xrandr --output  ${output} --auto "--${position}" ${PRIMARY_DIPSPLAY}
 leftwm-command SoftReload

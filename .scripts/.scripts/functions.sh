@@ -15,7 +15,7 @@ show_unused () {
 	echo -e "${RED}${BOLD}This shows only POTENTIAL unsed dependencies${NC}${NORM}"
 	IFS=$'\n' all_deps=( $(jq -r '.dependencies | to_entries[] | "\(.key)"' package.json ) $(jq -r '.devDependencies | to_entries[] | "\(.key)"' package.json ) )
 	for i in ${all_deps[@]}; do
-		grep -q -r $i ./lib ./db ./test ./config ./server ./src ./bin 2> /dev/null
+		grep -q -r $i ./lib ./db ./test ./config ./server ./src ./bin ./client 2> /dev/null
 		[ $? != 0 ] && echo $i
 	done
 }
